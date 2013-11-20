@@ -1,0 +1,57 @@
+<html>
+<head>
+  <title>Javascript Bare</title>
+</head>
+<body>
+
+<script type="text/javascript">
+
+// PE 3.1
+
+var addFive = function (num) {
+	return num + 5;
+}
+
+console.log("addFive(3) should be 8:", addFive(3));
+console.log("addFive(6) should be 11:", addFive(6));
+
+// PE 3.2
+
+var firstPrompt = prompt("say something random!");
+var secondPrompt = prompt("What is your favorite city?");
+var thirdPrompt = prompt("Do you like gorillas?");
+
+alert(thirdPrompt + " " + secondPrompt + " " + firstPrompt + " ");
+
+// PE 3.3 - Password with Counter
+
+var correctPassword = "12345";
+var password = prompt("What is your password?");
+var counter = 2;
+
+var attempts = function () {
+	counter = counter - 1;
+};
+
+var login = function (password) {
+	if (password === correctPassword) {
+		alert("Access granted.");
+	}
+	else if (password !== correctPassword && counter > 0) {
+		alert("Access denied. You have " + counter + " more tries.");
+		attempts();
+		password = prompt("What is your password?");
+		login(password);
+	}
+	else if (password !== correctPassword) {
+		alert("Game over.");
+	}
+};
+
+
+login(password);
+
+</script>
+
+</body>
+</html>
